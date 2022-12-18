@@ -1,16 +1,16 @@
-using IM_Router.Dao;
-using IM_Router.service;
-using IM_Router.service.impl;
-using IM_Router.Service;
-using IM_Router.Service.impl;
-using IM_Router.untils;
+
+using service.untils;
 using Microsoft.Extensions.Configuration;
 using Nacos.AspNetCore.V2;
 using Nacos.V2.DependencyInjection;
 using StackExchange.Redis.Extensions.Core.Configuration;
 using StackExchange.Redis.Extensions.Newtonsoft;
 
-namespace IM_Router
+using system.repository;
+using system.service;
+using CodeGenerate = service.untils.CodeGenerate;
+
+namespace service
 {
     public class Program
     {
@@ -71,8 +71,6 @@ namespace IM_Router
             app.Services.AddSingleton<TokenManager>();
             app.Services.AddHttpClient();
             app.Services.AddSingleton<RedisHerper>();
-            app.Services.AddSingleton<IForwradService, ForwradService>();
-            app.Services.AddSingleton<IRouteService, RouteService>();
             app.Services.AddNacosAspNet(app.Configuration,"nacos");
 
         }

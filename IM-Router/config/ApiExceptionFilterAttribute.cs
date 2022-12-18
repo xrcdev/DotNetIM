@@ -1,9 +1,9 @@
-﻿using Im_Common.Entity;
+﻿using im.common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
 
-namespace IM_Router.config
+namespace service.config
 {
     public class ApiExceptionFilterAttribute: IAsyncExceptionFilter
     {

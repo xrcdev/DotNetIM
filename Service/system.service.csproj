@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nacos-sdk-csharp" Version="1.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\api-untils\system.untils.csproj" />
+    <ProjectReference Include="..\Auth.Models\system.models.csproj" />
+    <ProjectReference Include="..\repository\system.repository.csproj" />
+  </ItemGroup>
+
+</Project>

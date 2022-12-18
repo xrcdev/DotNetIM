@@ -1,10 +1,10 @@
-﻿using Im_Common.Entity;
+﻿using im.common;
 using Microsoft.AspNetCore.Components.Routing;
 using Nacos.V2;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace IM_server1.server.新文件夹
+namespace IM_server1.server
 {
     public class RemoteForwardServiceImpl : IRemoteForwardService
     {

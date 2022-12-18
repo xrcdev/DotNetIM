@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+	  <PackageReference Include="nacos-sdk-csharp.AspNetCore" Version="1.3.4" />
+	  <PackageReference Include="StackExchange.Redis.Extensions.Newtonsoft" Version="8.0.5" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Forward.service\Forward.service.csproj" />
+  </ItemGroup>
+
+</Project>

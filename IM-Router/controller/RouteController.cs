@@ -1,9 +1,9 @@
-﻿using Im_Common.Entity;
-using IM_Router.service;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using system.service;
+using im.common;
 
-namespace IM_Router.Controller
+namespace service.Controller
 {
     [ApiController]
     [Route("/router")]

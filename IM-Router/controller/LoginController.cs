@@ -1,12 +1,10 @@
-﻿using Im_Common.Entity;
-using IM_Router.models;
-using IM_Router.service;
-using IM_Router.Service;
+﻿using service.models;
 using Microsoft.AspNetCore.Mvc;
-using Models;
 using System.ComponentModel.DataAnnotations;
+using system.service;
+using im.common;
 
-namespace IM_Router.Controller
+namespace service.Controller
 {
     [ApiController]
     public class LoginController
