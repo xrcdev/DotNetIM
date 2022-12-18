@@ -9,22 +9,22 @@ namespace IM_server1.cache
     /// </summary>
     public static class SessionCache
     {
-        private static Dictionary<int, IChannel> cache = new Dictionary<int, IChannel>();
+        private static Dictionary<long, IChannel> cache = new Dictionary<long, IChannel>();
 
-        private static Dictionary<int, String> sessionMap = new Dictionary<int, string>();
-        public static void Put(int pid,IChannel channel)
+        private static Dictionary<long, String> sessionMap = new Dictionary<long, string>();
+        public static void Put(long pid,IChannel channel)
         {
             cache[pid] = channel;
         }
 
-        public static void SaveSession(int id,String body)
+        public static void SaveSession(long id,String body)
         {
             sessionMap[id] = body;
         }
 
-        public static IChannel? GetChannel(int id)
+        public static IChannel? GetChannel(long id)
         {
-            return cache.GetValueOrDefault<int, IChannel>(id);
+            return cache.GetValueOrDefault<long, IChannel>(id);
         }
 
     }

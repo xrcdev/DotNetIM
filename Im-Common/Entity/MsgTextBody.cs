@@ -7,7 +7,7 @@ namespace IM_server1.Entity
     {
 
         [Required(ErrorMessage = "文本消息不为空！")]
-        private String _body;
+        private string _body;
 
         public string Body { get => _body; set => _body = value; }
     }

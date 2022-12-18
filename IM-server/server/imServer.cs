@@ -8,65 +8,91 @@ using DotNetty.Codecs.Http;
 using IM_server1.Entity;
 using IM_server1.handle;
 using IM_server1.cache;
+using Im_Common;
+using Google.Protobuf;
+using System.Text;
+using Nacos.V2;
+using IM_server1.server;
+using IM_server1.untils;
 
 namespace IM_server1.Server
 {
-    public class imServer
+
+    public class IMserver
     {
 
-        private String addr="1";
+        private String addr="";
                
         private int port;
 
         private IChannel chanle=null;
-        private imServerHandle handle=null;
+
         
-        public imServer(IConfiguration  root,imServerHandle handle)
+ 
+        private INacosNamingService _nacos;
+        public IMserver(INacosNamingService nacos,
+                        IConfiguration root
+                        )
         {
-            this.handle = handle;
+          
+            this._nacos = nacos;
             addr = root["imServer:bindAddr"];
             port = int.Parse(root["imServer:bindPort"]);
-            Start();
         }
-        private async void Start()
+        
+        public async void Start()
         {
             var boosgroup = new MultithreadEventLoopGroup(3); //boss 线程
             var workgroup = new MultithreadEventLoopGroup(1); //work 线程
             ServerBootstrap bootstrap = new ServerBootstrap();
-             bootstrap.
-                Group(boosgroup, workgroup)
-                 .Channel<TcpServerSocketChannel>()
-                 .Option(ChannelOption.SoReuseport, true)
-                 .Option(ChannelOption.TcpNodelay, true)
-                .Option(ChannelOption.SoBacklog, 1024)  
-                .Option(ChannelOption.SoKeepalive, true)
-                .ChildHandler(new ActionChannelInitializer<ISocketChannel>(chanle =>
-                {   
-                    var pipelin = chanle.Pipeline;
-
-             
-                    pipelin.AddLast(new ProtobufVarint32LengthFieldPrepender());
-                    pipelin.AddLast(new ProtobufEncoder());
-                    pipelin.AddLast(new ProtobufVarint32FrameDecoder());
-                    pipelin.AddLast(new ProtobufDecoder(IMRequest.Parser));
-                        
-                    pipelin.AddLast(this.handle);
-
-                }));
+            bootstrap.
+               Group(boosgroup, workgroup)
+                .Channel<TcpServerSocketChannel>()
+                .Option(ChannelOption.SoReuseport, true)
+                .Option(ChannelOption.TcpNodelay, true)
+               .Option(ChannelOption.SoBacklog, 1024)
+               .Option(ChannelOption.SoKeepalive, true)
+               .ChildHandler(AppBeanFactory.getBean<IMServerInitializer>());
 
             Console.WriteLine($"[Sharpdis] Server start [{addr}:{port}]");
 
-            this.chanle = await bootstrap.BindAsync(addr, port);
+            this.chanle = await bootstrap.BindAsync(IPAddress.Parse(addr), port);
+            await _nacos.RegisterInstance("im-server", "DEFAULT_GROUP", addr, port);
 
+            
         }
 
+        /// <summary>
+        /// 发送消息给指定用户
+        /// </summary>
+        /// <param name="req">用户标识</param>
         public void SendMeg(BaseMessage req)
         {
 
-            var chanle= SessionCache.GetChannel(req.Reqid);
- 
-           
-        
+           var chanle= SessionCache.GetChannel(req.Reqid);
+
+           var request= new IMRequest()
+            {
+                MessageId = req.Reqid,
+                Type = (int)MsgType.MSG
+            };
+          
+            if(req is MsgTextBody)
+            {
+                var obj= (MsgTextBody)req;
+
+                request.Body =ByteString.CopyFrom(Encoding.UTF8.GetBytes(obj.Body));
+            }else if(req is MsgStreamBody)
+            {
+                var obj = (MsgStreamBody)req;
+                using var memoryStrem= new MemoryStream();
+
+                memoryStrem.WriteTo(obj.Body);
+                
+                request.Body = ByteString.CopyFrom(memoryStrem.ToArray());
+            }
+                         
+            chanle?.WriteAndFlushAsync(request);
         }
     }
 }

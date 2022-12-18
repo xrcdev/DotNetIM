@@ -1,4 +1,4 @@
-﻿namespace IM_server1.Entity.Result
+﻿namespace Im_Common.Entity
 {
     public class ApiResult<T>
     {

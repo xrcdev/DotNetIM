@@ -1,5 +1,5 @@
-﻿using IM_server1.Entity;
-using IM_server1.Entity.Result;
+﻿using Im_Common.Entity;
+using IM_server1.Entity;
 using IM_server1.Server;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,22 +9,22 @@ namespace IM_server1.Controller
     public class ImServerController
     {
 
-        private imServer server;
-        public ImServerController(imServer server)
+        private IMserver _server;
+        public ImServerController(IMserver server)
         {
-            this.server = server;
+            this._server = server;
         }
 
         [HttpPost]
-        [Route("/SendTextMeg")]
+        [Route("/sendTextMeg")]
         public ApiResult<String> SendStreamMeg([FromBody] MsgTextBody body)
         {
-            server.SendMeg(body);
+            _server.SendMeg(body);
 
             var res = new ApiResult<String>()
             {
                 Code = ApiResultCode.Success,
-                Message = "登录成功"
+                Message = "发送成功"
             };
 
             return res;
@@ -32,15 +32,15 @@ namespace IM_server1.Controller
 
 
         [HttpPost]
-        [Route("/SendTextMeg")]
-        public ApiResult<String> SendTextMeg([FromBody] MsgStreamBody body)
+        [Route("/sendStreamMeg")]
+        public ApiResult<string> SendTextMeg([FromBody] MsgStreamBody body)
         {
-            server.SendMeg(body);
+            _server.SendMeg(body);
 
             var res = new ApiResult<String>()
             {
                 Code = ApiResultCode.Success,
-                Message = "登录成功"
+                Message = "发送成功"
             };
 
             return res;
