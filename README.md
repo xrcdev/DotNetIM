@@ -1,6 +1,7 @@
 # dotnet-im
-使用.net 6实现,基于微服务架构的分布式im
-技术栈 dotnetty mysql  redis nacos ocelot
+- # 使用.net 6实现,基于微服务架构的分布式im
+- 技术栈 dotnetty mysql  redis nacos ocelot
+- 项目架构图
 # 本项目一共分为四个微服务
 - # im-forward-service 
 - 对外提供推送消息
