@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "system", "system", "{62F6624F-CF4C-4CA1-934B-85B623883AD2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "im.system", "im.system", "{62F6624F-CF4C-4CA1-934B-85B623883AD2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "system.models", "im.system.service\system.models\system.models.csproj", "{BE5C482C-7346-4FE2-8175-058CE8CFA18A}"
 EndProject
@@ -15,17 +15,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "system.repository", "im.sys
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "system.webapi", "im.system.service\system.webapi\system.webapi.csproj", "{C51A4126-79CB-4793-ADEC-E33E9CA45ED6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "forward", "forward", "{3861F030-C0E8-4893-B2FB-AD7F306FC6CF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "im.forward", "im.forward", "{3861F030-C0E8-4893-B2FB-AD7F306FC6CF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forward.Webapi", "im-forward-service\Forward.Webapi\Forward.Webapi.csproj", "{52AAF608-8CD4-4607-A4B5-16EF32D41143}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forward.service", "im-forward-service\Forward.service\Forward.service.csproj", "{C80791C6-14E8-4BBF-AEBA-D9F76F3FDA60}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnetty", "dotnetty", "{455C0BC5-EA31-4D46-9E44-C378054E0CA4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "im.dotnetty", "im.dotnetty", "{455C0BC5-EA31-4D46-9E44-C378054E0CA4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnetty.webapi", "im.dotnetty.service\dotnetty.webapi\dotnetty.webapi.csproj", "{958F5E07-9CBF-4EDC-A35B-0BBEBA8681D1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Im.Common", "Im.Common\Im.Common.csproj", "{452DB615-C2C2-4D6A-8F1E-1D6FBA994E96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{EA14F9E8-2782-45ED-B0F4-25079163C92E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{5345625E-6DDD-4515-9318-B7B7E9BDDE2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "im.getway", "im.getway", "{C97265FD-F567-4279-B9EE-119E98840A4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "geteway", "im.getway\geteway\geteway\geteway.csproj", "{0BA769F1-AEC0-42F3-85D1-931401E1DD3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +77,14 @@ Global
 		{452DB615-C2C2-4D6A-8F1E-1D6FBA994E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{452DB615-C2C2-4D6A-8F1E-1D6FBA994E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{452DB615-C2C2-4D6A-8F1E-1D6FBA994E96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5345625E-6DDD-4515-9318-B7B7E9BDDE2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5345625E-6DDD-4515-9318-B7B7E9BDDE2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5345625E-6DDD-4515-9318-B7B7E9BDDE2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5345625E-6DDD-4515-9318-B7B7E9BDDE2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BA769F1-AEC0-42F3-85D1-931401E1DD3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BA769F1-AEC0-42F3-85D1-931401E1DD3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BA769F1-AEC0-42F3-85D1-931401E1DD3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BA769F1-AEC0-42F3-85D1-931401E1DD3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +98,8 @@ Global
 		{52AAF608-8CD4-4607-A4B5-16EF32D41143} = {3861F030-C0E8-4893-B2FB-AD7F306FC6CF}
 		{C80791C6-14E8-4BBF-AEBA-D9F76F3FDA60} = {3861F030-C0E8-4893-B2FB-AD7F306FC6CF}
 		{958F5E07-9CBF-4EDC-A35B-0BBEBA8681D1} = {455C0BC5-EA31-4D46-9E44-C378054E0CA4}
+		{5345625E-6DDD-4515-9318-B7B7E9BDDE2C} = {EA14F9E8-2782-45ED-B0F4-25079163C92E}
+		{0BA769F1-AEC0-42F3-85D1-931401E1DD3C} = {C97265FD-F567-4279-B9EE-119E98840A4C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65A6627D-EA54-43E9-A060-9D3A77F835C0}

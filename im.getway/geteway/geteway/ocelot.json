@@ -1,0 +1,43 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+
+      "UpstreamPathTemplate": "/system/{url}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      //指明服务名
+      "ServiceName": "im-api-service",
+      //指明负载平衡方式
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin" //轮询
+      },
+      //使用服务发现
+      "UseServiceDiscovery": true
+    },
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+
+      "UpstreamPathTemplate": "/forward/{url}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      //指明服务名
+      "ServiceName": "im-forward-service",
+      //指明负载平衡方式
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin" //轮询
+      },
+      //使用服务发现
+      "UseServiceDiscovery": true
+    }
+
+
+  ],
+  //全局配置
+  "GlobalConfiguration": {
+    //服务发现的提供者
+    "ServiceDiscoveryProvider": {
+      "Type": "Nacos"
+    }
+  }
+}
