@@ -1,4 +1,5 @@
-﻿using OracleInternal.Secure.Network;
+﻿using Models;
+using OracleInternal.Secure.Network;
 using SqlSugar.DistributedSystem.Snowflake;
 using system.models;
 using system.untils;

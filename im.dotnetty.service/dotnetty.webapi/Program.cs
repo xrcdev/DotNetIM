@@ -1,3 +1,4 @@
+using Im.Common.component;
 using IM_server1.handle;
 using IM_server1.server;
 using IM_server1.Server;
@@ -59,6 +60,7 @@ namespace IM_server1
             app.Services.AddHttpClient();
             app.Services.AddSingleton<IRemoteForwardService, RemoteForwardServiceImpl>();
 
+            app.Services.AddSingleton<IHttpClientComponent, HttpClientComponent>();
 
 
         }

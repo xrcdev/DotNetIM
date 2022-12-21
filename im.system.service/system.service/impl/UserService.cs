@@ -16,6 +16,11 @@ namespace service
             this._manage = manager;
         }
 
+        public User getUser(string userTag)
+        {
+            return base.GetFirst(a => a.UserTag == userTag);
+        }
+
         public async Task<LoginVo?> Login(string UserName, string password)
         {
             var user = base.GetFirst(a => a.Username == UserName &&
@@ -46,5 +51,7 @@ namespace service
                 user.UserTag = idworker.nextId().ToString();
             return await base.InsertAsync(user);
         }
+
+       
     }
 }

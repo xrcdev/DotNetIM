@@ -4,7 +4,7 @@ using system.service;
 using im.common;
 using Forward.service;
 
-namespace service.Controller
+namespace system_webapi.controller
 {
     [ApiController]
     [Route("/router")]

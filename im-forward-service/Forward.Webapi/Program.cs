@@ -1,5 +1,6 @@
 using Forward.service;
 using Forward.service.impl;
+using Im.Common.component;
 using Nacos.AspNetCore.V2;
 using StackExchange.Redis.Extensions.Core.Configuration;
 using StackExchange.Redis.Extensions.Newtonsoft;
@@ -50,6 +51,7 @@ namespace Forward.Webapi
             app.Services.AddSingleton<RedisHerper>();
             app.Services.AddNacosAspNet(app.Configuration, "nacos");
 
+            app.Services.AddSingleton<IHttpClientComponent, HttpClientComponent>();
         }
     }
 }

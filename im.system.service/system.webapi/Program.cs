@@ -16,7 +16,7 @@ namespace service
         public static void Main(string[] args)
         {
             
-            if (false) {
+            if (true) {
                 var gender = new CodeGenerate();
 
                 gender.Start();
@@ -25,8 +25,7 @@ namespace service
 
 
             var builder = WebApplication.CreateBuilder(args);
-
- 
+            
             builder.Services.AddControllers().
                 ConfigureApiBehaviorOptions(option =>
             {

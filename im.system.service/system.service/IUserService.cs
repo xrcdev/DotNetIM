@@ -10,5 +10,7 @@ namespace system.service
         bool Logout();
        
         Task<bool> Regist(User user);
+
+        User getUser(string userTag);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace IM_server1.untils
+﻿namespace dotnetty.webapi.untils
 {
     public class AppBeanFactory
     {

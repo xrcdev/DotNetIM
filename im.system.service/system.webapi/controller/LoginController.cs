@@ -4,7 +4,7 @@ using system.service;
 using im.common;
 using system.models;
 
-namespace service.Controller
+namespace system_webapi.controller
 {
     [ApiController]
     public class LoginController

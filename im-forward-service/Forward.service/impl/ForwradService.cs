@@ -1,4 +1,5 @@
 ﻿using im.common;
+using Im.Common.component;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,11 @@ namespace Forward.service.impl
     public class ForwradService : IForwradService
     {
         private RedisHerper _herper;
-        private IHttpClientFactory _factory;
-        public ForwradService(RedisHerper herper, IHttpClientFactory factory)
+        private IHttpClientComponent _compent;
+        public ForwradService(RedisHerper herper, IHttpClientComponent compent)
         {
             this._herper = herper;
-            this._factory = factory;
+            this._compent = compent;
         }
         public Task<bool> ForwradGroupChat(BaseMessage mes)
         {
@@ -31,37 +32,21 @@ namespace Forward.service.impl
             {
                 return true;
             }
-
-
             string router = "";
-            string body = "";
+
             if (mes is MsgTextBody)
             {
                 router = "sendTextMeg";
-
-                body = JsonConvert.SerializeObject((MsgTextBody)mes);
-
             }
             else if (mes is MsgStreamBody)
             {
                 router = "sendStreamMeg";
             }
             if (!host.Contains("http://")) host = "http://" + host;
-
-            var request = new HttpRequestMessage(HttpMethod.Post, $"{host}/{router}");
-
-            request.Content = new StringContent(body);
-            request.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-
-            var client = _factory.CreateClient();
-
-
-            var response = await client.SendAsync(request);
-
-            var apiresult = JsonConvert.DeserializeObject<ApiResult<string>>(await response.Content.ReadAsStringAsync());
-
-
-            return apiresult.Code == ApiResultCode.Success;
+            
+            var reslut=await _compent.Post<ApiResult<string>, BaseMessage>(host+"/"+router,mes);
+          
+            return reslut.Code == ApiResultCode.Success;
         }
 
 

@@ -23,5 +23,21 @@ namespace system.models
            [SugarColumn(IsPrimaryKey=true,IsIdentity=true,ColumnName="id")]
            public int Id {get;set;}
 
+           /// <summary>
+           /// Desc:用户id
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           [SugarColumn(ColumnName="userid")]
+           public int? Userid {get;set;}
+
+           /// <summary>
+           /// Desc:好友id
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           [SugarColumn(ColumnName="contactid")]
+           public int? ContaCtid {get;set;}
+
     }
 }
