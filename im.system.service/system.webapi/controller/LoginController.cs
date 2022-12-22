@@ -63,6 +63,28 @@ namespace system_webapi.controller
             };
         }
 
+        [Route("/PaserToken")]
+        [HttpGet]
+        public async Task<ApiResult<User>> ParserToken([Required(ErrorMessage ="请输入要解析的token")] string token)
+        {
+            User u=await _userService.ParserToken(token);
+            if (u == null)
+            {
+                return new ApiResult<User>()
+                {
+                    Code = ApiResultCode.Failed,
+                    Message = "解析失败"
+                };
+            }
+            return new ApiResult<User>()
+            {
+                Code=ApiResultCode.Success,
+                Message="解析成功",
+                Data = u
+            };
+
+        }
+
 
     }
 }

@@ -34,8 +34,11 @@ namespace Im.Common.component
         {
             var request = new HttpRequestMessage(HttpMethod.Post, url);
 
-            request.Content = new StringContent(JsonConvert.SerializeObject(body));
-            
+            if(!(body is string))
+                request.Content = new StringContent(JsonConvert.SerializeObject(body));
+            else
+                request.Content = new StringContent(body.ToString());
+
             request.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
             var client = _factory.CreateClient();

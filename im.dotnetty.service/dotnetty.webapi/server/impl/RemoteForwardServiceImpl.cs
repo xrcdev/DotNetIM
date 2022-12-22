@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 
-namespace IM_server1.server
+namespace dotnetty.webapi.server
 {
     public class RemoteForwardServiceImpl : IRemoteForwardService
     {

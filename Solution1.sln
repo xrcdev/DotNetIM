@@ -33,7 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "im.getway", "im.getway", "{C97265FD-F567-4279-B9EE-119E98840A4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "geteway", "im.getway\geteway\geteway\geteway.csproj", "{0BA769F1-AEC0-42F3-85D1-931401E1DD3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "geteway", "im.getway\geteway\geteway\geteway.csproj", "{0BA769F1-AEC0-42F3-85D1-931401E1DD3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imsdk", "imsdk", "{F7CA38FB-2E05-4F46-9E5B-6540C7406410}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "im.sdk", "im-sdk\im.sdk\im.sdk.csproj", "{A4788FC5-FF15-40A3-9038-6B33902A06EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +89,10 @@ Global
 		{0BA769F1-AEC0-42F3-85D1-931401E1DD3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BA769F1-AEC0-42F3-85D1-931401E1DD3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BA769F1-AEC0-42F3-85D1-931401E1DD3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4788FC5-FF15-40A3-9038-6B33902A06EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4788FC5-FF15-40A3-9038-6B33902A06EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4788FC5-FF15-40A3-9038-6B33902A06EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4788FC5-FF15-40A3-9038-6B33902A06EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +108,7 @@ Global
 		{958F5E07-9CBF-4EDC-A35B-0BBEBA8681D1} = {455C0BC5-EA31-4D46-9E44-C378054E0CA4}
 		{5345625E-6DDD-4515-9318-B7B7E9BDDE2C} = {EA14F9E8-2782-45ED-B0F4-25079163C92E}
 		{0BA769F1-AEC0-42F3-85D1-931401E1DD3C} = {C97265FD-F567-4279-B9EE-119E98840A4C}
+		{A4788FC5-FF15-40A3-9038-6B33902A06EF} = {F7CA38FB-2E05-4F46-9E5B-6540C7406410}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65A6627D-EA54-43E9-A060-9D3A77F835C0}

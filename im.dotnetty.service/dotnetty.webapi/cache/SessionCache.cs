@@ -2,7 +2,7 @@
 using DotNetty.Transport.Channels;
 using System.Threading.Channels;
 
-namespace IM_server1.cache
+namespace dotnetty.webapi.cache
 {
     /// <summary>
     /// 保存当前节点所有在线用户

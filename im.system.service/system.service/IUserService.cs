@@ -12,5 +12,10 @@ namespace system.service
         Task<bool> Regist(User user);
 
         User getUser(string userTag);
+
+
+        Task<User> ParserToken(string token);
     }
+
+
 }

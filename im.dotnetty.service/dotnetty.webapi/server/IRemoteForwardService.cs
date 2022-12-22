@@ -1,4 +1,4 @@
-﻿namespace IM_server1.server
+﻿namespace dotnetty.webapi.server
 {
     /// <summary>
     /// 调用forward 微服务
@@ -10,8 +10,5 @@
         /// </summary>
         /// <returns></returns>
         Task<bool> addRoute(long uid, string host);
-
-
-
     }
 }

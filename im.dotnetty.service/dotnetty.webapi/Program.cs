@@ -1,13 +1,13 @@
 using Im.Common.component;
-using IM_server1.handle;
-using IM_server1.server;
-using IM_server1.Server;
-using IM_server1.untils;
+using dotnetty.webapi.handle;
+using dotnetty.webapi.server;
+using dotnetty.webapi.Server;
+using dotnetty.webapi.untils;
 using Nacos.AspNetCore.V2;
 using StackExchange.Redis.Extensions.Core.Configuration;
 using StackExchange.Redis.Extensions.Newtonsoft;
 
-namespace IM_server1
+namespace dotnetty.webapi
 {
     public class Program
     {

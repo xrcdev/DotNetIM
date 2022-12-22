@@ -1,3 +1,4 @@
+using geteway.Auth;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Nacos;
@@ -19,6 +20,7 @@ namespace geteway
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddOcelot().AddNacosDiscovery();
+              
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -28,12 +30,13 @@ namespace geteway
                 app.UseSwaggerUI();
             }
 
+            app.UseMiddleware<CustomAuthenticationMiddleware>();
+  
             app.UseOcelot();
             
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
-
+                
 
             app.MapControllers();
 

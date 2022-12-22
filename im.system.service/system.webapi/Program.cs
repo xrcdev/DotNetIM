@@ -16,7 +16,7 @@ namespace service
         public static void Main(string[] args)
         {
             
-            if (true) {
+            if (false) {
                 var gender = new CodeGenerate();
 
                 gender.Start();

@@ -7,13 +7,11 @@
 	<ItemGroup>
 		<PackageReference Include="Google.Protobuf" Version="3.19.4" />
 		<PackageReference Include="Google.Protobuf.Tools" Version="3.21.11" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
 		<PackageReference Include="protobuf-net" Version="3.1.25" />
 		<PackageReference Include="StackExchange.Redis.Extensions.AspNetCore" Version="8.0.5" />
 		<PackageReference Include="StackExchange.Redis.Extensions.Newtonsoft" Version="8.0.5" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
 
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="component\" />
 	</ItemGroup>
 </Project>

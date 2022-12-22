@@ -1,8 +1,8 @@
 ﻿using im.common;
-using IM_server1.Server;
+using dotnetty.webapi.Server;
 using Microsoft.AspNetCore.Mvc;
 
-namespace IM_server1.Controller
+namespace dotnetty.webapi.Controller
 {
     [ApiController]   
     public class ImServerController

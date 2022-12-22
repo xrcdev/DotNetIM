@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "IM_server1": {
+    "dotnetty.webapi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

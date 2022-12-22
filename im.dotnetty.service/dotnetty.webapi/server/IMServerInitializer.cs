@@ -1,9 +1,9 @@
 ﻿using DotNetty.Codecs.Protobuf;
 using DotNetty.Transport.Channels;
 using Google.Protobuf.WellKnownTypes;
-using IM_server1.handle;
+using dotnetty.webapi.handle;
 
-namespace IM_server1.server
+namespace dotnetty.webapi.server
 {
     public class IMServerInitializer : ChannelInitializer<IChannel>
     {

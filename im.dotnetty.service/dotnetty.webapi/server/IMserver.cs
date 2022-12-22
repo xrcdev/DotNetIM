@@ -5,17 +5,17 @@ using DotNetty.Transport.Channels;
 using System.Net;
 using DotNetty.Codecs.Protobuf;
 using DotNetty.Codecs.Http;
-using IM_server1.handle;
-using IM_server1.cache;
+using dotnetty.webapi.handle;
+using dotnetty.webapi.cache;
 using Im_Common;
 using Google.Protobuf;
 using System.Text;
 using Nacos.V2;
-using IM_server1.server;
-using IM_server1.untils;
+using dotnetty.webapi.server;
+using dotnetty.webapi.untils;
 using im.common;
 
-namespace IM_server1.Server
+namespace dotnetty.webapi.Server
 {
 
     public class IMserver

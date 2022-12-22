@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\..\Im.Common\Im.Common.csproj" />
   </ItemGroup>
 
 </Project>

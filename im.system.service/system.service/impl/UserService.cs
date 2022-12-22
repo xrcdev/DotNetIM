@@ -41,6 +41,11 @@ namespace service
             throw new NotImplementedException();
         }
 
+        public async Task<User> ParserToken(string token)
+        {
+             return await _manage.getUser(token);
+        }
+
         public async Task<bool> Regist(User user)
         {   
             

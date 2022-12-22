@@ -1,4 +1,4 @@
-﻿using Models;
+﻿using Im.Common.Entity;
 using OracleInternal.Secure.Network;
 using SqlSugar.DistributedSystem.Snowflake;
 using system.models;
@@ -30,7 +30,14 @@ namespace service.untils
         public async Task<string> CreateToken(User u)
         {
             string token = Md5Untils.GetMD5_16(IdGengenerate().ToString());
-            await _herper.SetValue<User>(token, u);
+            var vo = new TokenVo()
+            {
+                userTag = u.UserTag,
+                id=u.Id,
+                admin=u.Username
+
+            };
+            await _herper.SetValue<TokenVo>(token, vo);
 
             
             return token;

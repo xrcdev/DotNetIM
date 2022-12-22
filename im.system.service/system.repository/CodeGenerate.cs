@@ -8,7 +8,7 @@ namespace system.repository
     {
         public void Start()
         {
-            string constr = "Server=127.0.0.1;Port=3306;Database=im;Uid=root;Pwd=123456;charset=utf8;Allow User Variables=True";
+            string constr = "Server=120.48.61.75;Port=3306;Database=im;Uid=root;Pwd=123hh456;charset=utf8;Allow User Variables=True";
 
             var db = new SqlSugarClient(new ConnectionConfig()
             {

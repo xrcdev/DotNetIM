@@ -1,12 +1,12 @@
 ﻿using DotNetty.Transport.Channels;
 using Im_Common;
-using IM_server1.cache;
-using IM_server1.server;
+using dotnetty.webapi.cache;
+using dotnetty.webapi.server;
 using System.Net.Sockets;
 using System.Net;
 using System.Text;
 
-namespace IM_server1.handle
+namespace dotnetty.webapi.handle
 {
    
     public class IMServerHandle : SimpleChannelInboundHandler<IMRequest>
