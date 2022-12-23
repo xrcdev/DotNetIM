@@ -1,13 +1,21 @@
 # dotnet-im
-- # 使用.net 6实现,基于微服务架构的分布式im
-- 技术栈 dotnetty mysql  redis nacos ocelot
-- 项目架构图
+- # 介绍 
+- 该项目使用.net 6实现,基于微服务架构的分布式im
+
+| 功能    | 技术选型  |
+| :-----  | ------   | 
+| 微服务网关  | ocelot | 
+| 注册中心  | nacos | 
+| 缓存  | redis |
+| 数据库  | mysql8.0 |
+| 网络框架  | dotnetty |
+
 # 开发计划
 - [x] 私聊
 - [x] 添加联系人
 - [x] 心跳
 - [x] 集群支持
-- [ ] sdk
+- [ ] 用户sdk
 - [ ] 离线消息
 - [ ] 群聊
 
