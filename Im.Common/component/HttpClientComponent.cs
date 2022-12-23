@@ -19,7 +19,7 @@ namespace Im.Common.component
         }
         public async Task<T> Get<T>(string url)
         {
-            var request = new HttpRequestMessage(HttpMethod.Post, url);
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
 
 
             var client = _factory.CreateClient();

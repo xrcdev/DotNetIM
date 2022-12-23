@@ -1,5 +1,7 @@
-﻿using service;
+﻿using Im.Common.Entity;
+using service;
 using system.models;
+using system.models.Vo;
 using System.Threading.Tasks;
 
 namespace system.service
@@ -14,7 +16,7 @@ namespace system.service
         User getUser(string userTag);
 
 
-        Task<User> ParserToken(string token);
+        Task<TokenVo> ParserToken(string token);
     }
 
 

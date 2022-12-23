@@ -48,9 +48,9 @@ namespace service.untils
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        public async Task<User?> getUser(string token)
+        public async Task<TokenVo?> getUser(string token)
         {
-            return await _herper.GetValue<User>(token);
+            return await _herper.GetValue<TokenVo>(token);
         }
     }
 }

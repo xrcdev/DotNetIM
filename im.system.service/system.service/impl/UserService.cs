@@ -1,5 +1,7 @@
-﻿using service.untils;
+﻿using Im.Common.Entity;
+using service.untils;
 using system.models;
+using system.models.Vo;
 using system.repository;
 using system.service;
 using system.untils;
@@ -31,7 +33,13 @@ namespace service
             return new LoginVo()
             {
                 Token = await _manage.CreateToken(user),
-                Userinfo = user
+                user = new UserVo()
+                {
+                    Id = user.Id,
+                    Username = user.Username,
+                    UserTag = user.UserTag,
+                    Headsrc = user.Headsrc
+                }
             };
 
         }
@@ -41,7 +49,7 @@ namespace service
             throw new NotImplementedException();
         }
 
-        public async Task<User> ParserToken(string token)
+        public async Task<TokenVo> ParserToken(string token)
         {
              return await _manage.getUser(token);
         }

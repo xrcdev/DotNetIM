@@ -1,8 +1,11 @@
-﻿using system.models;
+﻿using SqlSugar;
 using system.models;
+using system.models;
+using system.models.Vo;
 using system.repository;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,11 +33,17 @@ namespace system.service.impl
 
         }
 
-        public List<ContaCts> GetContaCtsList(int userid)
+        public List<UserVo> GetContaCtsList(int userid, int page, int size)
         {
-            var list= base.GetList(a => a.Userid == userid || a.ContaCtid == userid);
 
-            return list;
+            int start = (page!=0?page-1:page) * size;
+            string sql = "select a.id, username, headsrc," +
+                "userTag from im_user as a inner join  im_contacts b " +
+                "on b.userid=a.id where b.contactid=@userid " +
+                "union all select a.id, username, headsrc, userTag from im_user as" +
+                " a inner join  im_contacts b on b.contactid=a.id where b.userid=@userid  limit @start,@end" ;
+             
+            return base.Context.Ado.SqlQuery<UserVo>(sql,new {userid=userid,start=start,end= size }).ToList();
         }
 
         public async Task<bool> IsContaCts(int userid, int contaId)

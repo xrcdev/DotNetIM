@@ -38,10 +38,15 @@ namespace geteway.Auth
                 Code = ApiResultCode.Failed,
                 Message = "请先登录"
             };
-            if (!context.Request.Headers.TryGetValue("Authorization", out var authorization))
+            if (context.Request.Path.Value.Equals("/system/Login"))
             {
-
+               await  _next(context);
+                return;
+            } 
                
+            if ( !context.Request.Headers.TryGetValue("Authorization", out var authorization))
+            {
+                 
                 await context.Response.WriteAsJsonAsync(failtResult);
                 return;
             }

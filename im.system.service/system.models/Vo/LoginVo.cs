@@ -1,11 +1,11 @@
 ﻿
 using SqlSugar;
 
-namespace system.models
+namespace system.models.Vo
 {
     public class LoginVo
     {
-        public User Userinfo { get; set; }
+        public UserVo user { get; set; }
 
         public string? Token { get; set; }
     }

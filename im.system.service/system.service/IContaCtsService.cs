@@ -1,4 +1,5 @@
 ﻿using system.models;
+using system.models.Vo;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ namespace system.service
         /// </summary>
         /// <param name="userid"></param>
         /// <returns></returns>
-        List<ContaCts> GetContaCtsList(int userid);
+        List<UserVo> GetContaCtsList(int userid,int page,int size);
 
 
         /// <summary>

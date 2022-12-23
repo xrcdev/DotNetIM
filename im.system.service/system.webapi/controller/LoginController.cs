@@ -3,10 +3,14 @@ using System.ComponentModel.DataAnnotations;
 using system.service;
 using im.common;
 using system.models;
+using system.models.Vo;
+using Im.Common.Entity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace system_webapi.controller
 {
     [ApiController]
+    
     public class LoginController
     {
         private IUserService _userService;
@@ -65,18 +69,18 @@ namespace system_webapi.controller
 
         [Route("/PaserToken")]
         [HttpGet]
-        public async Task<ApiResult<User>> ParserToken([Required(ErrorMessage ="请输入要解析的token")] string token)
+        public async Task<ApiResult<TokenVo>> ParserToken([Required(ErrorMessage ="请输入要解析的token")] string token)
         {
-            User u=await _userService.ParserToken(token);
+            TokenVo u=await _userService.ParserToken(token);
             if (u == null)
             {
-                return new ApiResult<User>()
+                return new ApiResult<TokenVo>()
                 {
                     Code = ApiResultCode.Failed,
                     Message = "解析失败"
                 };
             }
-            return new ApiResult<User>()
+            return new ApiResult<TokenVo>()
             {
                 Code=ApiResultCode.Success,
                 Message="解析成功",

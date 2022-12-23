@@ -1,4 +1,5 @@
 using geteway.Auth;
+using Im.Common.component;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Nacos;
@@ -20,7 +21,7 @@ namespace geteway
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddOcelot().AddNacosDiscovery();
-              
+            builder.Services.AddSingleton<IHttpClientComponent, HttpClientComponent>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

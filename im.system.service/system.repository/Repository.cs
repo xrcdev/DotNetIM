@@ -1,5 +1,6 @@
 ﻿ 
 using SqlSugar;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 
 namespace system.repository
@@ -11,6 +12,7 @@ namespace system.repository
         {
             base.Context = SugarClientUntils.db;
         }
+ 
          
     }
 }

@@ -1,30 +1,47 @@
 ﻿using im.common;
+using Im.Common.Entity;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using system.models;
+using system.models.Vo;
 using system.service;
+using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace system_webapi.controller
 {
+    [ApiController]
+    [Route("/ContaCts")]
+    [Authorize]
     public class ContaCtsController
     {
         private IContaCtsService _service;
-        public ContaCtsController(IContaCtsService service)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public ContaCtsController(IContaCtsService service, IHttpContextAccessor httpContextAccessor)
         {
+            _httpContextAccessor = httpContextAccessor;
             this._service = service;
         }
 
-        public ApiResult<List<ContaCts>> getContaCts()
-        {
-            int userid = 1;
 
-            return new ApiResult<List<ContaCts>>()
+        [HttpGet("/getContaCts")]
+        public ApiResult<List<UserVo>> getContaCts([Required] int page, [Required] int size)
+        {
+
+            string userid = _httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+
+
+            return new ApiResult<List<UserVo>>()
             {
                 Code = ApiResultCode.Success,
                 Message = "获取成功",
-                Data = _service.GetContaCtsList(userid)
+                Data = _service.GetContaCtsList(int.Parse(userid),page,size)
             };
 
         }
-
+        [HttpPost ("/addContaCts")]
         public async Task<ApiResult<string>> addContaCts(int Userid, int ContaCtsId)
         {
             if (await _service.AddContaCts(Userid, ContaCtsId))
@@ -49,6 +66,9 @@ namespace system_webapi.controller
         /// <param name="UserTag"></param>
         /// <param name="ContaTag"></param>
         /// <returns></returns>
+        /// 
+        [HttpGet("/IsContaCts")]
+
         public async Task<ApiResult<string>> IsContaCts(string UserTag, string ContaTag)
         {
             if (await _service.IsContaCtsTag(UserTag, ContaTag))

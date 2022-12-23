@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "IM_Router": {
+    "system-api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
