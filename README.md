@@ -7,7 +7,7 @@
 | 微服务网关  | ocelot | 
 | 注册中心  | nacos | 
 | 缓存  | redis |
-| 数据库  | mysql8.0 |
+| 数据库  | mysql |
 | 网络框架  | dotnetty |
 | 通信协议  | protobuf |
 
