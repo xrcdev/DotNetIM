@@ -7,10 +7,8 @@ namespace im.sdk.entity.Vo
     public class UserVo
     {
         public int Id { get; set; }
-
-        public int? Userid { get; set; }
-
-
-        public int? ContaCtid { get; set; }
+        public string Username { get; set; }
+        public string Headsrc { get; set; }
+        public string UserTag { get; set; }
     }
 }

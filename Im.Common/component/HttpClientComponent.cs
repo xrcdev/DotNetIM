@@ -51,9 +51,8 @@ namespace Im.Common.component
         {
             var request = new HttpRequestMessage(HttpMethod.Post, url);
 
-
-            request.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-
+            
+          
             var client = _factory.CreateClient();
 
             var response = await client.SendAsync(request);

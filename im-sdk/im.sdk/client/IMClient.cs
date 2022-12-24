@@ -5,8 +5,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace im.sdk
+namespace im.sdk.client
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IMClient
     {
         /// <summary>
@@ -20,6 +23,9 @@ namespace im.sdk
         /// 获取联系人列表
         /// </summary>
         /// <returns></returns>
-        Task<LoginReponse> getLoginResponse (LoginRequest req);
+        Task<LoginReponse> getLoginResponse(LoginRequest req);
+
+
+        Task<ImServerAddrResponse> GetImServerAddrResponse(ImServerAddrRequest req);
     }
 }

@@ -28,13 +28,14 @@ namespace im.sdk.untils
         public static async Task<T> Get<T>(string url,string token="")
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
-            if (token.Equals(""))
+            if (!token.Equals(""))
             {
                 request.Headers.Add("Authorization", token);
             }
             var response = await client.SendAsync(request);
 
             var res = await response.Content.ReadAsStringAsync();
+         
 
             return JsonConvert.DeserializeObject<T>(res);
         }

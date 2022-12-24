@@ -27,18 +27,17 @@ namespace dotnetty.webapi.server
         public async Task<bool> addRoute(long uid, string host)
         {
 
-             
+            return true;
             _logger.LogInformation("addrouter {0} {1}", uid, host);
-            var instance = await _nacos.SelectOneHealthyInstance("im-forward", "DEFAULT_GROUP");
+            var instance = await _nacos.SelectOneHealthyInstance("im-forward-service", "DEFAULT_GROUP");
             string remote = $"{instance.Ip}:{instance.Port}";
             if (!remote.Contains("http://")) remote = "http://" + remote;
 
+            Console.WriteLine($"{remote}/Router?uid={uid}&host={host}");
 
-
-            var res =await _component.Post<ApiResult<string>>($"{remote}/addRoute?uid={uid}&host={host}");
-            
-
-       
+            var res =await _component.Post<ApiResult<string>>($"{remote}/Router/Add?uid={uid}&host={host}");
+              
+             
             return res.Code==ApiResultCode.Success;
 
         }

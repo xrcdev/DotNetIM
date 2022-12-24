@@ -6,10 +6,11 @@ using dotnetty.webapi.untils;
 using Nacos.AspNetCore.V2;
 using StackExchange.Redis.Extensions.Core.Configuration;
 using StackExchange.Redis.Extensions.Newtonsoft;
+using Google.Protobuf.WellKnownTypes;
 
 namespace dotnetty.webapi
 {
-    public class Program
+    public static class Program
     {
         public static WebApplication _app { get; set; }
         public static void Main(string[] args)
@@ -21,7 +22,7 @@ namespace dotnetty.webapi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             
-            RegistService(builder);
+            builder.RegistService();
 
             var app = builder.Build();
 
@@ -40,20 +41,22 @@ namespace dotnetty.webapi
 
             new AppBeanFactory(app.Services);
 
-            IMserver? server=(IMserver?) app.Services.GetService(typeof(IMserver));
-            
-            server?.Start();
 
+            app.StartImServer();
 
             app.MapControllers();
           
             app.Run();
         }
-        public static void RegistService(WebApplicationBuilder app)
+        public static void StartImServer(this WebApplication app)
         {
-            app.Services.AddSingleton<IMserver>();
-         
+            IMserver? server = (IMserver?)app.Services.GetRequiredService(typeof(IMserver));
 
+            server?.Start();
+        }
+        public static void RegistService(this WebApplicationBuilder app)
+        {
+            app.Services.AddSingleton<IMserver>(); 
             app.Services.AddTransient<IMServerInitializer>();
             app.Services.AddTransient<IMServerHandle>();
             app.Services.AddNacosAspNet(app.Configuration, "nacos");

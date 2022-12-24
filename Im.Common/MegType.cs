@@ -22,6 +22,11 @@ namespace Im_Common
         /// <summary>
         /// 心跳消息
         /// </summary>
-            PING
+            PING,
+
+            /// <summary>
+            /// 心跳消息
+            /// </summary>
+            PONG
     }
 }

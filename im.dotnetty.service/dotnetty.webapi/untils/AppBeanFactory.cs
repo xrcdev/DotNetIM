@@ -5,9 +5,9 @@
 
         private static IServiceProvider _Provider;
 
-        public static T? getBean<T>()
+        public static T getBean<T>()
         {
-            return _Provider.GetService<T>();
+            return _Provider.CreateScope().ServiceProvider.GetService<T>();
         }
         public AppBeanFactory(IServiceProvider app)
         {

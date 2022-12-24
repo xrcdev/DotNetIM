@@ -1,4 +1,5 @@
 ﻿using im.common;
+using im.sdk.client;
 using im.sdk.entity;
 using im.sdk.entity.Request;
 using im.sdk.entity.Response;
@@ -33,6 +34,20 @@ namespace im.sdk.impl
                 Code = res.Code,
                 Message=res.Message,
             };
+        }
+
+        public async Task<ImServerAddrResponse> GetImServerAddrResponse(ImServerAddrRequest req)
+        {
+            string router=  GloableRouteConfig.GetOrDefaultValues("ImServerAddrRequest");
+            var res = await HttpClientUtils.Get<ApiResult<string>>($"{host}{router}", req.token);
+           
+            return new ImServerAddrResponse()
+            {
+                Code = res.Code,
+                Message = res.Message,
+                addr=res.Data
+            };
+
         }
 
         public async Task<LoginReponse> getLoginResponse(LoginRequest req)

@@ -9,17 +9,18 @@ namespace im.sdk
     /// </summary>
     internal static class GloableRouteConfig
     {
-        private readonly static Dictionary<string, string> RouterCache = new Dictionary<string, string>();
+        private readonly static Dictionary<string, string> routerCache = new Dictionary<string, string>();
 
         static GloableRouteConfig(){
-            RouterCache.Add("ContsCtsListRequest", "/system/getContaCts");
-            RouterCache.Add("LoginRequest", "/system/Login");
+            routerCache.Add("ContsCtsListRequest", "/system/getContaCts");
+            routerCache.Add("LoginRequest", "/system/Login");
+            routerCache.Add("ImServerAddrRequest", "/forward/getNode");
 
         }
 
         public static string GetOrDefaultValues(string key)
         {
-            return RouterCache.GetValueOrDefault<string,string>(key);
+            return routerCache.GetValueOrDefault<string,string>(key);
         }
 
 

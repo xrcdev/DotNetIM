@@ -51,7 +51,7 @@ namespace dotnetty.webapi.Server
                 .Option(ChannelOption.SoReuseport, true)
                 .Option(ChannelOption.TcpNodelay, true)
                .Option(ChannelOption.SoBacklog, 1024)
-               .Option(ChannelOption.SoKeepalive, true)
+               .Option(ChannelOption.SoKeepalive, true)//tcp 心跳
                .ChildHandler(AppBeanFactory.getBean<IMServerInitializer>());
 
             Console.WriteLine($"[Sharpdis] Server start [{addr}:{port}]");
