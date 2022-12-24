@@ -7,7 +7,7 @@
 | 微服务网关  | ocelot | 
 | 注册中心  | nacos | 
 | 缓存  | redis |
-| 数据库  | mysql8.0 |
+| 数据库  | mysql |
 | 网络框架  | dotnetty |
 | 通信协议  | protobuf |
 
@@ -18,7 +18,7 @@
 - [x] 心跳
 - [x] 鉴权
 - [x] 集群支持
-- [ ] Sdk开发包
+- [ ] [Sdk开发包](https://github.com/adminoryuan/dotnet-im/blob/master/SDKREADME.md)
 - [ ] 广播消息
 - [ ] 离线消息
 - [ ] 群聊
