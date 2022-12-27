@@ -4,7 +4,7 @@ using System.Text;
 
 namespace im.sdk.entity.Request
 {
-    public class ImServerAddrRequest:GetRequest
+    public class ServerAddrRequest:GetRequest
     {
 
     }

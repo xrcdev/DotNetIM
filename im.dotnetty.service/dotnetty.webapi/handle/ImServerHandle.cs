@@ -26,6 +26,7 @@ namespace dotnetty.webapi.handle
         }
         public override void ChannelInactive(IChannelHandlerContext context)
         {
+            
             //客户端断开
             base.ChannelInactive(context);
         }

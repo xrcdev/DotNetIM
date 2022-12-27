@@ -26,6 +26,16 @@ namespace im.sdk.client
         Task<LoginReponse> getLoginResponse(LoginRequest req);
 
 
-        Task<ImServerAddrResponse> GetImServerAddrResponse(ImServerAddrRequest req);
+        Task<ImServerAddrResponse> getServerAddrResponse(ServerAddrRequest req);
+
+        Task<Response> getResponse(RegistRequest req);
+
+
+        Task<Response> SendTxtMessage(TxtMessageRequest req);
+
+
+        Task<Response> SendStreamMessage(TxtMessageRequest req);
+
+
     }
 }

@@ -27,7 +27,6 @@ namespace dotnetty.webapi.server
         public async Task<bool> addRoute(long uid, string host)
         {
 
-            return true;
             _logger.LogInformation("addrouter {0} {1}", uid, host);
             var instance = await _nacos.SelectOneHealthyInstance("im-forward-service", "DEFAULT_GROUP");
             string remote = $"{instance.Ip}:{instance.Port}";

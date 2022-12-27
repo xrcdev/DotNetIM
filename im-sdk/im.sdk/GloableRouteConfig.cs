@@ -1,4 +1,5 @@
-﻿using System;
+﻿using im.sdk.entity.Request;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -15,6 +16,8 @@ namespace im.sdk
             routerCache.Add("ContsCtsListRequest", "/system/getContaCts");
             routerCache.Add("LoginRequest", "/system/Login");
             routerCache.Add("ImServerAddrRequest", "/forward/getNode");
+            
+            routerCache.Add("RegistRequest", "/forward/register");
 
         }
 

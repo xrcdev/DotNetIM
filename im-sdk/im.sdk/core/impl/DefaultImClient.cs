@@ -36,7 +36,7 @@ namespace im.sdk.impl
             };
         }
 
-        public async Task<ImServerAddrResponse> GetImServerAddrResponse(ImServerAddrRequest req)
+        public async Task<ImServerAddrResponse> getServerAddrResponse(ServerAddrRequest req)
         {
             string router=  GloableRouteConfig.GetOrDefaultValues("ImServerAddrRequest");
             var res = await HttpClientUtils.Get<ApiResult<string>>($"{host}{router}", req.token);
@@ -61,6 +61,24 @@ namespace im.sdk.impl
                 Message = res.Message,
             };
 
+        }
+
+        public async Task<Response> getResponse(RegistRequest req)
+        {
+            string router = GloableRouteConfig.GetOrDefaultValues("ImServerAddrRequest");
+          
+            return await HttpClientUtils.Post<Response, RegistRequest>($"{host}{router}", req);
+
+        }
+
+        public Task<Response> SendTxtMessage(TxtMessageRequest req)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Response> SendStreamMessage(TxtMessageRequest req)
+        {
+            throw new NotImplementedException();
         }
     }
 }
