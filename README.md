@@ -19,7 +19,7 @@
 - [x] 心跳
 - [x] 鉴权
 - [x] 集群支持
-- [ ] [Sdk开发包](https://github.com/adminoryuan/dotnet-im/blob/master/SDKREADME.md)
+- [x] [Sdk开发包](https://github.com/adminoryuan/dotnet-im/blob/master/SDKREADME.md)
 - [ ] 广播消息
 - [ ] 离线消息
 - [ ] 群聊
