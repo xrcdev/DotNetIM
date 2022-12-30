@@ -1,4 +1,4 @@
-# dotnet-im
+# DotNetIM
 - # 介绍 
 - 该项目使用.net 6实现,基于微服务架构的分布式im(即时通讯)
 - 项目整体基于.net6 web api 实现
@@ -23,6 +23,7 @@
 - [ ] 广播消息
 - [ ] 离线消息
 - [ ] 群聊
+
 
  # 项目介绍
 - # im-forward-service 
