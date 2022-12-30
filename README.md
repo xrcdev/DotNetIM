@@ -7,6 +7,7 @@
 | :-----  | ------   | 
 | 微服务网关  | ocelot | 
 | 注册中心  | nacos | 
+| 服务调用  | 增强HttpClient|
 | 缓存  | redis |
 | 数据库  | mysql |
 | 网络框架  | dotnetty |
