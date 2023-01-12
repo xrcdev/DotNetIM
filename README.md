@@ -36,6 +36,8 @@
 - 提供联系人、群组相关接口
 - # im-dotnetty-service
 - 使用dotnetty 实现tcp长连接
+- 提供消息推送接口
+- 心跳监测
 - # geteway-service 服务
 - 统一接口访问
 - 鉴权
