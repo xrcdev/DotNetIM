@@ -1,4 +1,4 @@
-# dotnet-im
+# DotNetIM
 - # 介绍 
 - 该项目使用.net 6实现,基于微服务架构的分布式im(即时通讯)
 - 项目整体基于.net6 web api 实现
@@ -7,6 +7,7 @@
 | :-----  | ------   | 
 | 微服务网关  | ocelot | 
 | 注册中心  | nacos | 
+| 服务调用  | 增强HttpClient|
 | 缓存  | redis |
 | 数据库  | mysql |
 | 网络框架  | dotnetty |
@@ -19,10 +20,11 @@
 - [x] 心跳
 - [x] 鉴权
 - [x] 集群支持
-- [ ] [Sdk开发包](https://github.com/adminoryuan/dotnet-im/blob/master/SDKREADME.md)
+- [x] [Sdk开发包](https://github.com/adminoryuan/dotnet-im/blob/master/SDKREADME.md)
 - [ ] 广播消息
 - [ ] 离线消息
 - [ ] 群聊
+
 
  # 项目介绍
 - # im-forward-service 
@@ -34,6 +36,9 @@
 - 提供联系人、群组相关接口
 - # im-dotnetty-service
 - 使用dotnetty 实现tcp长连接
+- 提供消息推送接口
+- 心跳监测
 - # geteway-service 服务
 - 统一接口访问
 - 鉴权
+- 限流
