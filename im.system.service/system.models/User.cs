@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json;
 using SqlSugar;
 
 namespace system.models
@@ -38,7 +37,6 @@ namespace system.models
            /// Nullable:False
            /// </summary>           
            [SugarColumn(ColumnName="password")]
-          
            public string Password {get;set;}
 
            /// <summary>

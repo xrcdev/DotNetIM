@@ -24,7 +24,7 @@ namespace dotnetty.webapi.server
             _component = component;
         }
 
-        public async Task<bool> addRoute(long uid, string host)
+        public async Task<bool> AddRoute(long uid, string host)
         {
 
             _logger.LogInformation("addrouter {0} {1}", uid, host);
@@ -39,6 +39,13 @@ namespace dotnetty.webapi.server
              
             return res.Code==ApiResultCode.Success;
 
+        }
+
+      
+
+        public Task<bool> ClearRouter(long uid)
+        {
+            throw new NotImplementedException();
         }
     }
 }

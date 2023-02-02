@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace im.sdk.entity.Request
+namespace im.sdk.entity
 {
-    public class PushRequest
+    public class PushConfigure
     {
         public string token { get; set; }
 
         public long userTag { get; set; }
 
-        
+
     }
 }

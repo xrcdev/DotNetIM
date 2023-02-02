@@ -1,7 +1,17 @@
-﻿namespace dotnetty.server.handle
+﻿using dotnetty.webapi.cache;
+using DotNetty.Transport.Channels;
+
+namespace dotnetty.server.handle
 {
     public class SessionHandler
     {
-        public void Clear();
+        
+        /// <summary>
+        /// 下线该用户
+        /// </summary>
+        public void Offline(IChannel channel)
+        {
+            
+        }
     }
 }

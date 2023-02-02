@@ -1,22 +1,24 @@
-﻿using im.sdk.entity.Request;
+﻿using im.sdk.client;
+using im.sdk.entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace im.sdk.client.impl
+namespace im.sdk.core
 {
-    public abstract class AbstPushClient: IPushClient
+    public abstract class AbstPushClient
     {
-        protected  PushRequest _request;
+        protected PushConfigure _request;
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="tag">用户唯一标识</param>
         /// <param name="token">令牌</param>
-        public AbstPushClient(PushRequest request,string remoteAddr)
+        public AbstPushClient(PushConfigure request, string remoteAddr)
         {
-            this._request = request;
+            _request = request;
 
             ConnectAsync(remoteAddr);
         }

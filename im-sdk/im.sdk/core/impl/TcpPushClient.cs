@@ -1,7 +1,6 @@
 ﻿using DotNetty.Transport.Bootstrapping;
 using DotNetty.Transport.Channels.Sockets;
 using DotNetty.Transport.Channels;
-using im.sdk.entity.Request;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -12,6 +11,8 @@ using im.sdk.client.impl.handle;
 using Im_Common;
 using Google.Protobuf;
 using im.sdk.untils;
+using im.sdk.core;
+using im.sdk.entity;
 
 namespace im.sdk.client.impl
 {
@@ -19,7 +20,7 @@ namespace im.sdk.client.impl
     {
 
         private IChannel _channel;
-        public TcpPushClient(PushRequest request, string remoteAddr) : base(request, remoteAddr)
+        public TcpPushClient(PushConfigure request, string remoteAddr) : base(request, remoteAddr)
         {
 
         }

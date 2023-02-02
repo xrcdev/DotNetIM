@@ -1,7 +1,9 @@
 ﻿using im.sdk.client;
 using im.sdk.client.impl;
+using im.sdk.core;
 using im.sdk.entity;
 using im.sdk.entity.Request;
+using im.sdk.entity.Response;
 using im.sdk.impl;
 using System.Text;
 
@@ -33,7 +35,7 @@ namespace Client
 
             var userinfo = res.getLoginVo();
 
-            var respon = await client.GetImServerAddrResponse(new ImServerAddrRequest()
+            var respon = await client.getServerAddrResponse(new ServerAddrRequest()
             {
                 token = userinfo.Token
             });
@@ -41,7 +43,7 @@ namespace Client
             Console.WriteLine(respon.addr);
 
 
-            var pushclient= PushClientFactory.GetPushClient(PushClientType.Tcp, new PushRequest()
+            var pushclient= PushClientFactory.GetPushClient(PushClientType.Tcp, new PushConfigure()
             {
                 token = "3e655327ab27c73a439a6aec805ea8",
                 userTag =long.Parse("16110335724438528") 

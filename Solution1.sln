@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "geteway", "im.getway\getewa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imsdk", "imsdk", "{F7CA38FB-2E05-4F46-9E5B-6540C7406410}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "im.sdk", "im-sdk\im.sdk\im.sdk.csproj", "{A4788FC5-FF15-40A3-9038-6B33902A06EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "im.sdk", "im-sdk\im.sdk\im.sdk.csproj", "{A4788FC5-FF15-40A3-9038-6B33902A06EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

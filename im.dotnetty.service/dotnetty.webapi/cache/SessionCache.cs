@@ -11,6 +11,7 @@ namespace dotnetty.webapi.cache
     {
         private static Dictionary<long, IChannel> cache = new Dictionary<long, IChannel>();
 
+ 
         private static Dictionary<long, String> sessionMap = new Dictionary<long, string>();
         public static void Put(long pid,IChannel channel)
         {
@@ -20,6 +21,10 @@ namespace dotnetty.webapi.cache
         public static void SaveSession(long id,String body)
         {
             sessionMap[id] = body;
+        }
+        public static void ClearChannel(IChannel channel)
+        {
+          
         }
 
         public static IChannel? GetChannel(long id)
