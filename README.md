@@ -21,8 +21,8 @@
 - [x] 鉴权
 - [x] 集群支持
 - [x] [Sdk开发包](https://github.com/adminoryuan/dotnet-im/blob/master/SDKREADME.md)
-- [ ] 广播消息
-- [ ] 离线消息
+- [x] 广播消息
+- [x] 离线消息
 - [ ] 群聊
 
 
